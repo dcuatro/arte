@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>UIkit</title>
+        <link rel="shortcut icon" href="docs/images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="docs/images/apple-touch-icon.png">
+        <link id="data-uikit-theme" rel="stylesheet" href="docs/css/uikit.docs.min.css">
+        <link rel="stylesheet" href="docs/css/docs.css">
+        <link rel="stylesheet" href="vendor/highlight/highlight.css">
+        <script src="vendor/jquery.js"></script>
+        <script src="dist/js/uikit.min.js"></script>
+        <script src="vendor/highlight/highlight.js"></script>
+        <script src="docs/js/background-check.min.js"></script>
+        <script src="docs/js/fixed-nav.js"></script>
+        <script src="docs/js/docs.js"></script>
+    </head>
+
+    <body class="tm-background-red">
+
+        <nav class="tm-navbar uk-navbar uk-navbar-attached">
+            <div class="uk-container uk-container-center">
+                <a href="#tm-offcanvas" class="fixed-nav" data-uk-offcanvas><i class="uk-icon-bars"></i></a>
+            </div>
+        </nav>
+
+        <div class="tm-section tm-section-colored">
+            <div class="uk-container uk-container-center uk-text-center">
+                <h1 class="uk-text-large"> MI FLAMENCO ROUTES </h1>
+
+                <div class="uk-text-large" >
+                     <p>Es una historia de · <span style="font-style: italic;">is a story of</span></p> 
+                        <img class="uk-container-center" width="200px" src="docs/images/SURNAMES.svg">
+                </div>  
+
+                <div class="uk-text-large" >
+                     <p> Actividad subvencionada por · <span style="font-style: italic;"> with the help of</span></p> 
+                        <img class="uk-container-center" width="350px" src="docs/images/ministerio.svg">
+                </div>  
+
+                <div class="uk-text-large" >
+                     <p>Con la colaboración de · <span style="font-style: italic;">in collaboration with </span></p> 
+                     <p>CHLOÉ BRÛLÉ</p>
+                     <p>CHARO CALA</p>
+                     <p>RAÚL CANTIZANO</p>
+                     <p>Mª DE LOS ÁNGELES CARRASCO</p>
+                     <p>MARTA CARRASCO</p>
+                     <p>CRISTINA CRUCES</p>
+                     <p>NIÑO DE ELCHE</p>
+                     <p>SEGUNDO FALCÓN</p>
+                     <p>ESPERANZA FERNÁNDEZ</p>
+                     <p>JOSÉ GALÁN</p>
+                     <p>PATRICIA GUERRERO</p>
+                     <p>Mª EUSEBIA LÓPEZ</p>
+                     <p>ANDRÉS MARÍN</p>
+                     <p>MIGUEL MARÍN</p>
+                     <p>ROCÍO MÁRQUEZ</p>
+                     <p>RICARDO MIÑO</p>
+                     <p>PEDRO RICARDO MIÑO</p>
+                     <p>PEPA MONTES</p>
+                     <p>CRISTÓBAL ORTEGA</p>
+                     <p>LOLA PANTOJA</p>
+                     <p>JUAN CARLOS ROMERO</p>
+                     <p>KYOKO SHIKAZE</p>
+                     <p>ILDEFONSO VERGARA</p>
+                     <p>JUAN VERGILLOS</p> 
+                </div>  
+
+
+                    <i class="uk-icon-heart-o uk-animation-scale-down"></i>
+            </div>
+
+
+        <div id="tm-offcanvas" class="uk-offcanvas">
+            <div class="uk-offcanvas-bar">
+                <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="{ multiple: true }">
+                  <li class="tm-background-bluedark"><a href="index.html">inicio · home</a></li>
+                  <li class="tm-background-blue"><a href="places.html">lugares · places</a></li>
+                  <li class="tm-background-red"><a href="credits.html">créditos · credits</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <script>
+
+            $.ajax({
+                dataType : "jsonp",
+                url      : "https://api.github.com/repos/uikit/uikit?callback=ukghapi&nocache="+Math.random(),
+                success  : function(data){
+
+                    if(!data) return;
+
+                    if(data.data.watchers){
+                        $("[data-uikit-stargazers]").html(data.data.watchers);
+                    }
+
+                    if(data.data.forks){
+                        $("[data-uikit-forks]").html(data.data.forks);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
